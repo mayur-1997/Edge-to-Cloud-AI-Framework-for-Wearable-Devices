@@ -164,6 +164,18 @@ The system uses a three-tier architecture:
    ```bash
    flutter run
    ```
+## 🔄 Data Flow
 
+### Normal Operation (Connected)
 
+1. ESP32 fills buffer slot with audio data (~1 second)
+2. Clip marked with timestamp, size, index, sent=false
+3. ESP32 checks phone connection status (every 2 seconds)
+4. Header transmitted (16 bytes): markers + index + size + timestamp
+5. Audio data transferred in 512-byte chunks via BLE notify
+6. End marker sent (4 bytes): 0xFF 0xBB markers
+7. Flutter app assembles chunks and validates markers
+8. WAV file created in local temp directory
+9. File uploaded to S3: `private/{user-id}/{filename}`
+10. Local temp file deleted, clip marked as sent on ESP32
 
