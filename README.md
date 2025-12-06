@@ -124,6 +124,8 @@ Example S3 access policy:
     }
   ]
 }
+'''
+
 ## 💾 Installation
 
 ### ESP32 Firmware
