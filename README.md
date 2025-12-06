@@ -179,3 +179,14 @@ The system uses a three-tier architecture:
 9. File uploaded to S3: `private/{user-id}/{filename}`
 10. Local temp file deleted, clip marked as sent on ESP32
 
+### Disconnected Operation (Buffering)
+
+1. **Connection Lost**: ESP32 continues recording to buffer
+2. **Buffer Management**: 3-clip capacity (newest overwrites oldest unsent)
+3. **Sent Flag Tracking**: Each clip has boolean "sent" flag
+4. **Reconnection**: Phone reconnects to ESP32
+5. **Unsent Detection**: ESP32 scans buffer for sent=false clips
+6. **Transfer Queue**: All unsent clips sent in FIFO order
+7. **Resume**: After buffer cleared, new recordings transmitted live
+
+
