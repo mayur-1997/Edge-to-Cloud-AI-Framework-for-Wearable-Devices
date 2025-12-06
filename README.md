@@ -6,34 +6,10 @@ A real-time audio capture and streaming system that enables simultaneous connect
 
 ## 🚀 Features
 
-- **Multi-Device Support:** Connect to multiple ESP32 BLE devices simultaneously  
-- **Smart Buffering:** Circular buffer (3 clips × 32 KB = 96 KB) provides ~3 seconds of audio retention during disconnection  
-- **Automatic Recovery:** Buffered audio clips are automatically transferred upon reconnection  
+- **Multi-Device Support:** Connect to multiple ESP32 BLE devices simultaneously   
 - **Secure Authentication:** AWS Cognito integration with email verification  
 - **Private Cloud Storage:** User-scoped S3 storage with encryption  
-- **Cross-Platform Ready:** iOS operational, Android deployment ready  
 - **Real-Time Monitoring:** Live data transfer with progress tracking  
-
----
-
-## 📋 Table of Contents
-
-1. [Architecture](#-architecture)  
-2. [Technical Specifications](#-technical-specifications)  
-3. [Getting Started](#-getting-started)  
-4. [Installation](#-installation)  
-5. [Usage](#-usage)  
-6. [Data Flow](#-data-flow)  
-7. [Security](#-security)  
-8. [Roadmap](#-roadmap)  
-9. [Use Cases](#-use-cases)  
-10. [Current Limitations](#-current-limitations)  
-11. [Technical Risks & Mitigation](#-technical-risks--mitigation)  
-12. [Project Structure](#-project-structure)  
-13. [Contributing](#-contributing)  
-14. [Acknowledgments](#-acknowledgments)  
-
----
 
 ## 🏗️ Architecture
 
