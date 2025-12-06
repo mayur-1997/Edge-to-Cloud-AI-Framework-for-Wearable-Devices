@@ -105,37 +105,65 @@ The system uses a three-tier architecture:
 - Server-side encryption enabled  
 - IAM policy path pattern: `private/{cognito-identity-id}/*`  
 
-### 4. Configure IAM Policies
-
-Example S3 access policy:
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:PutObject",
-        "s3:GetObject",
-        "s3:DeleteObject"
-      ],
-      "Resource": "arn:aws:s3:::your-bucket-name/private/${cognito-identity.amazonaws.com:sub}/*"
-    }
-  ]
-}
-'''
+4. **Configure IAM Policies**:
+   ```json
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Action": [
+           "s3:PutObject",
+           "s3:GetObject",
+           "s3:DeleteObject"
+         ],
+         "Resource": "arn:aws:s3:::your-bucket-name/private/${cognito-identity.amazonaws.com:sub}/*"
+       }
+     ]
+   }
+   ```
 
 ## 💾 Installation
 
 ### ESP32 Firmware
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/yourusername/ble-audio-streaming.git
    cd ble-audio-streaming/esp32
+   ```
 
+2. Open `sketch_nov4a.ino` in Arduino IDE
+
+3. Install required libraries:
+   - BLE (built-in ESP32 library)
+
+4. Update configuration if needed (BLE service UUID, buffer settings)
+
+5. Upload to ESP32 board
+
+### Flutter Application
+
+1. Navigate to the Flutter app directory:
+   ```bash
+   cd ../flutter_app
+   ```
+
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. Configure AWS Amplify:
+   - Update `amplifyconfiguration.dart` with your AWS credentials
+   - Add your Cognito User Pool ID
+   - Add your Cognito Identity Pool ID
+   - Add your S3 bucket name
+
+4. Run the app:
+   ```bash
+   flutter run
+   ```
 
 
 
