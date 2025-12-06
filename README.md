@@ -124,3 +124,16 @@ Example S3 access policy:
     }
   ]
 }
+## 💾 Installation
+
+### ESP32 Firmware
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/ble-audio-streaming.git
+   cd ble-audio-streaming/esp32
+
+
+
+
